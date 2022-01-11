@@ -1,0 +1,47 @@
+// it has 3 casessss
+
+--> n is prime  => n-1
+--> n=pxq (both prime) => (p-1)(q-1)
+--> else => n(1 - 1/p1)(1- 1/p2).....
+p1,p2,....pn are prime factors of n
+
+//its viper's style of the sum.....used sets like demigodd
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long 
+
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+	set<ll>prm;
+ll n,num;
+cin>>n;
+num=n;
+for(ll i=2;i*i<=n;i++){
+while(n%i==0){
+prm.insert(i);
+n=n/i;
+}
+}
+if(n>1){
+prm.insert(n);
+}
+cout<<"The prime factors of the given num are : ";
+for(auto x:prm){
+	cout<<x<<" ";
+}
+cout<<endl;
+cout<<"Eulers value is : ";
+Eulers totient fn
+float res=num;
+for(auto y:prm){
+	 res *= (1.0 - (1.0 / (float)y));
+}
+cout<<(int)res<<endl;
+}
+return 0;
+}
